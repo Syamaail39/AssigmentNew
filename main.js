@@ -246,7 +246,7 @@ function generateTokenAdmin() {
 
   const token = jwt.sign(
     payload,
-    'syamail@mael', // Replace with your admin secret key
+    'SyaM@@il', // Replace with your admin secret key
     { expiresIn: '1h' }
   );
 
@@ -287,7 +287,7 @@ async function verifyAdminToken(req, res, next) {
       return res.status(401).send('Unauthorized');
     }
 
-    const decodedAdmin = jwt.verify(adminToken.split(' ')[1], 'syamaail@mael');
+    const decodedAdmin = jwt.verify(adminToken.split(' ')[1], 'SyaM@@il');
 
     if (decodedAdmin.username !== 'admin') {
       console.error('User is not an admin');
@@ -380,7 +380,7 @@ app.post('/admin-create-car', verifyAdminToken, async (req, res) => {
     const adminToken = req.headers.authorization.split(' ')[1];
 
     // Verify the admin token
-    const decodedAdmin = jwt.verify(adminToken, 'syamaail@mael'); // Replace with your secret key
+    const decodedAdmin = jwt.verify(adminToken, 'SyaM@@il'); // Replace with your secret key
 
     // Access admin data from the decoded token
     const adminUsername = decodedAdmin.username;
@@ -452,7 +452,7 @@ app.delete('/admin-delete-car/:carId', verifyAdminToken, async (req, res) => {
     const adminToken = req.headers.authorization.split(' ')[1];
 
     // Verify the admin token
-    const decodedAdmin = jwt.verify(adminToken, 'syamaail@mael'); // Replace with your secret key
+    const decodedAdmin = jwt.verify(adminToken, 'SyaM@@il'); // Replace with your secret key
 
     // Access admin data from the decoded token
     const adminUsername = decodedAdmin.username;

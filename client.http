@@ -62,7 +62,7 @@ POST http://localhost:3000/login-admin
 Content-Type: application/json
 
 {
-  "privateKey": "maelmael321"
+  "privateKey": "m@3l123"
 }
 
 
@@ -88,14 +88,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkb
 ### Admin Create Car Details
 POST http://localhost:3000/admin-create-car
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzA0ODM1Njg1LCJleHAiOjE3MDQ4MzkyODV9.nROGhWCWtg_qhOc0YWlMbuTojpfpRNBrIS3IazLpyo0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzA0ODcxNjIxLCJleHAiOjE3MDQ4NzUyMjF9.9sddInxAKD2XIHSsHCYp5JLlUvMZulEWQ7dcLIfSKo4
 
 {
-  "brand": "Honda",
-  "model": "City",
-  "year": 2022,
-  "colour": "Oren",
-  "noplate": "PFB5985"
+  "brand": "Porsche",
+  "model": "GT3",
+  "year": 2023,
+  "colour": "Blue",
+  "noplate": "G3"
 }
 
 
