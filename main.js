@@ -31,7 +31,7 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(session({
-  secret: 'TESTSECRET',
+  secret: 'mael001',
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -93,7 +93,7 @@ function generateToken(user) {
 
   const token = jwt.sign(
     payload,
-    'TESTSECRET', // Replace with your secret key
+    'mael001', // Replace with your secret key
     { expiresIn: '1h' }
   );
 
@@ -179,7 +179,7 @@ app.post('/rent-car', rentalDetailValidation, async (req, res) => {
     const userToken = req.headers.authorization.split(' ')[1];
 
     // Verify the user token
-    const decodedUser = jwt.verify(userToken, 'TESTSECRET'); // Replace with your secret key
+    const decodedUser = jwt.verify(userToken, 'mael001'); // Replace with your secret key
 
     // Access user data from the decoded token
     const username = decodedUser.username;
@@ -212,7 +212,7 @@ app.delete('/delete-rent-car/:appointmentDate', async (req, res) => {
     const userToken = req.headers.authorization.split(' ')[1];
 
     // Verify the user token
-    const decodedUser = jwt.verify(userToken, 'TESTSECRET'); // Replace with your secret key
+    const decodedUser = jwt.verify(userToken, 'mael001'); // Replace with your secret key
 
     // Access user data from the decoded token
     const username = decodedUser.username;
@@ -246,7 +246,7 @@ function generateTokenAdmin() {
 
   const token = jwt.sign(
     payload,
-    'abc', // Replace with your admin secret key
+    'syamail@mael', // Replace with your admin secret key
     { expiresIn: '1h' }
   );
 
@@ -258,7 +258,7 @@ app.post('/login-admin', async (req, res) => {
     const { privateKey } = req.body;
 
     // Check if the provided private key is valid (In a real-world scenario, this should be more secure)
-    if (privateKey === '123') {
+    if (privateKey === 'm@3l123') {
       // Generate a token for the admin
       const adminToken = generateTokenAdmin();
 
@@ -287,7 +287,7 @@ async function verifyAdminToken(req, res, next) {
       return res.status(401).send('Unauthorized');
     }
 
-    const decodedAdmin = jwt.verify(adminToken.split(' ')[1], 'abc');
+    const decodedAdmin = jwt.verify(adminToken.split(' ')[1], 'syamaail@mael');
 
     if (decodedAdmin.username !== 'admin') {
       console.error('User is not an admin');
@@ -306,7 +306,7 @@ async function verifyAdminToken(req, res, next) {
 // Admin edit data user
 app.patch('/admin-update-rental/:username', verifyAdminToken, async (req, res) => {
   try {
-    const { name, email, phonenumber, appointmentDate, ICnumber } = req.body;
+    const { name, email, phonenumber, rentaltDate, ICnumber } = req.body;
     const { username } = req.params;
 
     const updateFields = {};
@@ -321,8 +321,8 @@ app.patch('/admin-update-rental/:username', verifyAdminToken, async (req, res) =
     if (phonenumber) {
       updateFields.phonenumber = phonenumber;
     }
-    if (appointmentDate) {
-      updateFields.appointmentDate = appointmentDate;
+    if (rentalDate) {
+      updateFields.rentalDate = rentaltDate;
     }
     if (ICnumber) {
       updateFields.ICnumber = ICnumber;
@@ -380,7 +380,7 @@ app.post('/admin-create-car', verifyAdminToken, async (req, res) => {
     const adminToken = req.headers.authorization.split(' ')[1];
 
     // Verify the admin token
-    const decodedAdmin = jwt.verify(adminToken, 'abc'); // Replace with your secret key
+    const decodedAdmin = jwt.verify(adminToken, 'syamaail@mael'); // Replace with your secret key
 
     // Access admin data from the decoded token
     const adminUsername = decodedAdmin.username;
@@ -452,7 +452,7 @@ app.delete('/admin-delete-car/:carId', verifyAdminToken, async (req, res) => {
     const adminToken = req.headers.authorization.split(' ')[1];
 
     // Verify the admin token
-    const decodedAdmin = jwt.verify(adminToken, 'abc'); // Replace with your secret key
+    const decodedAdmin = jwt.verify(adminToken, 'syamaail@mael'); // Replace with your secret key
 
     // Access admin data from the decoded token
     const adminUsername = decodedAdmin.username;

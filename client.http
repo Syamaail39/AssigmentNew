@@ -62,7 +62,7 @@ POST http://localhost:3000/login-admin
 Content-Type: application/json
 
 {
-  "privateKey": "123"
+  "privateKey": "maelmael321"
 }
 
 
