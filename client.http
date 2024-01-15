@@ -88,14 +88,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkb
 ### Admin Create Car Details
 POST http://localhost:3000/admin-create-car
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzA0ODcxNjIxLCJleHAiOjE3MDQ4NzUyMjF9.9sddInxAKD2XIHSsHCYp5JLlUvMZulEWQ7dcLIfSKo4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzA0ODcyMzMyLCJleHAiOjE3MDQ4NzU5MzJ9.6TKivJ3sOrHJfns8ipTtQl73Y7zzX6oa48d7R1hHdB8
 
 {
-  "brand": "Porsche",
-  "model": "GT3",
+  "brand": "Audi",
+  "model": "R8",
   "year": 2023,
-  "colour": "Blue",
-  "noplate": "G3"
+  "colour": "Magenta",
+  "noplate": "AU41"
 }
 
 
